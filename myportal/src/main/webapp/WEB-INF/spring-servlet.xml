@@ -7,11 +7,13 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-
-<!-- 어노테이션 기반 설정 사용 -->
 	<context:annotation-config />
-	<!-- 컴포넌트 자동 등록 사용
-		컴포넌트를 com.example.myportal.controllers 패키지에서 찾아라 -->
 	<context:component-scan 
 		base-package="com.bitacademy.myportal.controller" />
+
+	<!-- 스프링은 기본적으로 모든 요청을 DispatcherServlet이 처리
+		정적 자원 제공을 위해서는 정적 자원의 처리를
+		DefaultServlet에게 위임해야 한다 -->
+	<mvc:annotation-driven />
+	<mvc:default-servlet-handler /><!-- 정적 자원 처리 담당 -->
 </beans>
