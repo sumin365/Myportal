@@ -12,7 +12,7 @@ import com.bitacademy.myportal.vo.GuestbookVo;
 public class GuestbookServiceImpl implements GuestbookService {
 
 	//	DAO 연결
-	//	Autowired : bean이름으로 객체를 검색 주입(DI)
+	//	Autowired : bean id로 객체를 검색 주입(DI)
 	@Autowired
 	GuestbookDao guestbookDaoImpl; 
 	
@@ -24,14 +24,14 @@ public class GuestbookServiceImpl implements GuestbookService {
 
 	@Override
 	public boolean writeMessage(GuestbookVo vo) {
-		// TODO Auto-generated method stub
-		return false;
+		int insertedCount = guestbookDaoImpl.insert(vo);
+		return 1 == insertedCount;
 	}
 
 	@Override
 	public boolean deleteMessage(GuestbookVo vo) {
-		// TODO Auto-generated method stub
-		return false;
+		int deletedCount = guestbookDaoImpl.delete(vo);
+		return 1 == deletedCount;
 	}
 
 }

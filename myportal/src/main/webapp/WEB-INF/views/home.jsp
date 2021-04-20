@@ -17,16 +17,18 @@
 		<div id="wapper">
 			<div id="content">
 				<div id="site-introduction">
+				
+				
+				
 					<p>Spring으로 만든 홈페이지입니다</p>
+					
+					
+					
+					
 				</div>
 			</div>
 		</div>
+		<jsp:include page="/WEB-INF/views/includes/footer.jsp" />
 	</div>
 </body>
 </html>
-
-
-<!-- 주소창에 /myportal/assets/css/home.css 치기 
-근데 오류가 남 왜냐 spring특성상 가지고 있는 모든 url을 frontcontroller가 감지한다. 
-/assets/css/home.css가 들어오면 headler한테 물어본다. 찾아줘 . headler는 당연히 못찾지 
- -->

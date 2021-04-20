@@ -29,8 +29,8 @@
 		class="oracle.jdbc.pool.OracleDataSource"
 		destroy-method="close">
 		<property name="URL"
-			value="jdbc:oracle:this:@localhost:1521:xe" />
-		<property name="user" value="C##NAMSK" />	
+			value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="user" value="C##SUMIN" />	
 		<property name="password" value="1234" />
 		<property name="connectionCachingEnabled" 
 			value="true" />
@@ -42,7 +42,7 @@
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource"	ref="oracleDataSource" />
 		<!-- 설정 파일 -->
-		<property name="configuration" value="classpath:mybatis/configuration.xml" />
+		<property name="configLocation" value="classpath:mybatis/configuration.xml" />
 	</bean>
 	
 	<!-- MyBatis SqlSessionTemplate 등록 -->
